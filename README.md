@@ -8,10 +8,10 @@ The repository is structured as follows:
 │   ├── CMakeLists.txt # CMake configuration file for building the lab
 │   └── README.md      # Lab-specific documentation (task description, usage, etc.)
 ├── lab2/
-│   ├── src/
-│   ├── test/
-│   ├── CMakeLists.txt
-│   └── README.md
+│   ├── src/           # Source code files (.c, .h)
+│   ├── test/          # Test files for verifying lab functionality
+│   ├── CMakeLists.txt # CMake configuration file for building the lab
+│   └── README.md      # Lab-specific documentation (task description, usage, etc.)
 ├── ...
 └── README.md          # This file, providing an overview of the repository
 
@@ -28,8 +28,7 @@ To build and run the labs, ensure you have the following installed:
 C Compiler: GCC or Clang (recommended: GCC 9.0 or later).
 CMake: Version 3.10 or higher.
 Make: For building the projects.
-Operating System: Linux or Windows .
-
+Operating System: Linux or Windows with a Unix-like environment (e.g., WSL).
 
 
 Репозиторий лабораторных работ по программированию на C
@@ -42,10 +41,10 @@ Operating System: Linux or Windows .
 │   ├── CMakeLists.txt # Файл конфигурации CMake для сборки лабораторной
 │   └── README.md      # Документация для лабораторной (описание задачи, использование и т.д.)
 ├── lab2/
-│   ├── src/
-│   ├── test/
-│   ├── CMakeLists.txt
-│   └── README.md
+│   ├── src/           # Исходные файлы (.c, .h)
+│   ├── test/          # Файлы тестов для проверки функциональности
+│   ├── CMakeLists.txt # Файл конфигурации CMake для сборки лабораторной
+│   └── README.md      # Документация для лабораторной (описание задачи, использование и т.д.)
 ├── ...
 └── README.md          # Этот файл, содержащий обзор репозитория
 
@@ -62,7 +61,5 @@ README.md: Подробная документация лабораторной,
 Компилятор C: GCC или Clang (рекомендуется GCC 9.0 или новее).
 CMake: Версия 3.10 или выше.
 Make: Для сборки проектов.
-Операционная система: Linux или Windows .
-
-
+Операционная система: Linux или Windows с Unix-подобной средой (например, WSL).
 
