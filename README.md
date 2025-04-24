@@ -1,41 +1,68 @@
-## Как сдавать лабораторные работы (лабы)
-:triangular_flag_on_post: Перед началом выполнения лабы переключитесь на основную ветку (master)
-* Создайте ветку для выполнения лабы
-  * Имя ветки должно совпадать именем поддиректории на этой странице выше -- `lab0`, `lab1-0`, `lab1-1` и т.д.
-* Переключитесь на ветку с лабой
-* Напишите код лабы в файле `src/main.c`
-  * Регулярно заливайте код лабы на сервер и пишите понятные commit messages
-  * Можно разделить код лабы на несколько файлов `*.c` и `*.h` и добавить `*.c` в `set(SRC src/main.c)` в `CMakeLists.txt` через пробел после `src/main.c`
-* Исправьте все падения тестов
-* Создайте мерж-реквест (merge request) из ветки в master
-  * Назначьте исполнителем (assignee) мерж-реквеста Вашего преподавателя по программированию
-* Исправьте все замечания преподавателя, обновите мерж реквест, исправьте новые замечания и т.д.
+C Programming Lab Repository
+This repository contains a collection of laboratory works for a C programming course. Each lab is organized in its own directory, named lab1, lab2, etc., and includes source code, tests, build configuration, and documentation specific to that lab.
+Repository Structure
+The repository is structured as follows:
+├── lab1/
+│   ├── src/           # Source code files (.c, .h)
+│   ├── test/          # Test files for verifying lab functionality
+│   ├── CMakeLists.txt # CMake configuration file for building the lab
+│   └── README.md      # Lab-specific documentation (task description, usage, etc.)
+├── lab2/
+│   ├── src/
+│   ├── test/
+│   ├── CMakeLists.txt
+│   └── README.md
+├── ...
+└── README.md          # This file, providing an overview of the repository
 
-## Локальная отладка лабы
-* Рекомендуется скачать тестировщик из поддиректории `test` и проверять свои фиксы, запуская тестировщик на вашем ноуте/десктопе
-  * Под Windows используйте тестировщик *.exe
-  * Под Linux используйте тестировщик без расширения
-  * Под MacOS соберите [тестировщик из исходного кода](https://github.com/Evgueni-Petrov-aka-espetrov/TestDriver)
-* Это быстрее, чем ждать очереди на сервере
-* Это уменьшает нагрузку на сервер, экономит трафик и электроэнергию, сберегает нервы вашим однокурсникам :relaxed:
+Each lab directory contains:
 
-## Этапы тестирования лабы на сервере
-* Отладочная сборка, ограничение по памяти 1Гб, ограничение по времени 1 минута + тестировщик из поддиректории `test`
-* Релизная сборка, ограничение по памяти и по времени из формулировки лабы + тестировщик из поддиректории `test`
-  * Если падают large тесты из-за таймаута, то имеет смысл 1-2 раза перезапустить пайп-лайн :relaxed:
-* Сборка с address sanitizer-ом (проверка работы с памятью и указателями), ограничение по памяти 1Гб, ограничение по времени 1 минута + тестировщик из поддиректории `test`
-* Сборка с undefined behavior sanitizer-ом (проверка на неопределенное поведение), ограничение по памяти 1Гб, ограничение по времени 1 минута + тестировщик из поддиректории `test`
-* Проверка стиля кода, тестировщик не запускается
+src/: C source files (.c) and header files (.h) implementing the lab's tasks.
+test/: Test files or scripts to validate the functionality of the lab's code.
+CMakeLists.txt: CMake configuration file to build the lab's source code.
+README.md: Detailed documentation for the lab, including the task description, build instructions, and usage examples.
 
-## Правила оценивания лабы
-:zero: баллов -- нет ветки с кодом лабы и/или нет правок на этой ветке
+Prerequisites
+To build and run the labs, ensure you have the following installed:
 
-:one: балл -- есть ветка с лабой, но лаба не собирается
+C Compiler: GCC or Clang (recommended: GCC 9.0 or later).
+CMake: Version 3.10 or higher.
+Make: For building the projects.
+Operating System: Linux or Windows .
 
-:two: балла -- есть ветка с лабой, лаба собирается, но проходит меньше 50% тестов
 
-:three: балла -- есть ветка с лабой, лаба собирается, но проходит меньше 100% тестов
 
-:four: балла -- есть ветка с лабой, лаба собирается, проходит все тесты, но не исправлено замечание преподавателя
+Репозиторий лабораторных работ по программированию на C
+Этот репозиторий содержит набор лабораторных работ по курсу программирования на языке C. Каждая лабораторная работа находится в отдельной директории, названной lab1, lab2 и т.д., и включает исходный код, тесты, конфигурацию сборки и документацию, специфичную для данной лабораторной работы.
+Структура репозитория
+Репозиторий организован следующим образом:
+├── lab1/
+│   ├── src/           # Исходные файлы (.c, .h)
+│   ├── test/          # Файлы тестов для проверки функциональности
+│   ├── CMakeLists.txt # Файл конфигурации CMake для сборки лабораторной
+│   └── README.md      # Документация для лабораторной (описание задачи, использование и т.д.)
+├── lab2/
+│   ├── src/
+│   ├── test/
+│   ├── CMakeLists.txt
+│   └── README.md
+├── ...
+└── README.md          # Этот файл, содержащий обзор репозитория
 
-:five: баллов -- есть ветка с лабой, лаба собирается, проходит все тесты, исправлены все замечания преподавателя
+Каждая директория лабораторной работы содержит:
+
+src/: Исходные файлы на C (.c) и заголовочные файлы (.h), реализующие задачи лабораторной.
+test/: Файлы или скрипты для тестирования функциональности кода.
+CMakeLists.txt: Файл конфигурации CMake для сборки исходного кода.
+README.md: Подробная документация лабораторной, включая описание задачи, инструкции по сборке и примеры использования.
+
+Требования
+Для сборки и запуска лабораторных работ необходимо установить:
+
+Компилятор C: GCC или Clang (рекомендуется GCC 9.0 или новее).
+CMake: Версия 3.10 или выше.
+Make: Для сборки проектов.
+Операционная система: Linux или Windows .
+
+
+
