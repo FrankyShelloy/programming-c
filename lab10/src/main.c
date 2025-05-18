@@ -1,24 +1,24 @@
 #include "grehem.h"
 
 int main() {
-    int point_count;
-    if (scanf("%d", &point_count) != 1) {
+    int pointCount;
+    if (scanf("%d", &pointCount) != 1) {
         printf("bad number of lines\n");
         return 0;
     }
 
-    if (point_count < 0 || point_count > 100000) {
+    if (pointCount < 0 || pointCount > 100000) {
         printf("bad number of points\n");
         return 0;
     }
 
-    Point *points = (Point *)malloc(point_count * sizeof(Point));
+    Point *points = (Point *)malloc(pointCount * sizeof(Point));
     if (!points) {
         printf("memory error\n");
         return 0;
     }
 
-    for (int i = 0; i < point_count; i++) {
+    for (int i = 0; i < pointCount; i++) {
         if (scanf("%d %d", &points[i].x, &points[i].y) != 2) {
             printf("bad number of lines\n");
             free(points);
@@ -26,25 +26,25 @@ int main() {
         }
     }
 
-    if (point_count == 0) {
+    if (pointCount == 0) {
         free(points);
         return 0;
     }
 
-    Point *convex_hull = (Point *)malloc((point_count + 1) * sizeof(Point));
-    if (!convex_hull) {
+    Point *convexHull = (Point *)malloc((pointCount + 1) * sizeof(Point));
+    if (!convexHull) {
         printf("memory error\n");
         free(points);
         return 0;
     }
 
-    int hull_size = build_convex_hull(points, point_count, convex_hull);
+    int hullSize = buildConvexHull(points, pointCount, convexHull);
 
-    for (int i = 0; i < hull_size; i++) {
-        printf("%d %d\n", convex_hull[i].x, convex_hull[i].y);
+    for (int i = 0; i < hullSize; i++) {
+        printf("%d %d\n", convexHull[i].x, convexHull[i].y);
     }
 
     free(points);
-    free(convex_hull);
+    free(convexHull);
     return 0;
 }
